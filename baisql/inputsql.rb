@@ -1,7 +1,7 @@
 class Input
 	def initialize
 	end 
-	def nhap
+	def nhapuser
 		puts "nhap Ten"
     	$username= gets.chomp
     	puts "email"
