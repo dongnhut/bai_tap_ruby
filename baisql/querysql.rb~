@@ -46,7 +46,7 @@ require './inputsql'
   # k=11
   d.selectsao(db)
   2.times do
-  i.nhapuser 
+  i.nhap 
   d.insert(db,$username,$email,$password,$gioitinh)
     # k=k+1
     #end
