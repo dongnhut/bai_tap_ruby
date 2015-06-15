@@ -9,13 +9,16 @@ class Input
 		@y = gets.to_i
 		Point.new(@x, @y)
 	end
+
+	arr = []
+	input = Input.new
+	5.times {
+		arr.push(input.nhap)
+	}
+	puts "Nhap toa do diem O: "
+	o = input.nhap
+	puts "Cac diem trong ban kinh R = 5: "
+	arr.each{|p| puts "\t#{p}" if p.distance(o) <= 5}
 end
 
-arr = []
-input = Input.new
-5.times {
-	arr.push(input.nhap)
-}
-puts "Nhap toa do diem O: "
-o = input.nhap
-arr.each{|p| puts p if p.distance(o) <= 5}
+

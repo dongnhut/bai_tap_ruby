@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Test Page</title>
+  <%= stylesheet_link_tag "index.scss" %>
+
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="logo">
+				<h1>Test Page</h1>
+			</div>
+			<div class="login">
+					<%= form_tag "/checkLogin" do %>
+
+						<%= label_tag :email %>
+						<%= email_field_tag :email, params[:email] %>
+
+						<%= label_tag :password %>
+						<%= password_field_tag :password, params[:password] %>
+							
+						<%= submit_tag "Login", :class => "btn btn-primary" %>
+					<% end %>
+			</div>
+		</div>
+		<div class="content">			
+			 <%= button_to "Show users list", '/users', :method => "get" %>
+		</div>
+	</div>
+</body>
+</html>
