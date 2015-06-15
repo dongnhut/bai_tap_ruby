@@ -1,0 +1,15 @@
+<%= form_tag "/update/#{@account_edit.id}" do %>
+
+<%= label_tag :name %>
+<%= text_field_tag :name, params[:name]="#{@account_edit.Ten}" %>
+<br>
+<%= label_tag :GioiTinh %>
+<%= text_field_tag :GioiTinh, params[:GioiTinh]="#{@account_edit.GioiTinh}" %>
+<br>
+<%= label_tag :Diachi %>
+<%= text_field_tag :DiaChi, params[:DiaChi]="#{@account_edit.DiaChi}" %>
+<br>
+
+<%= submit_tag "Edit", :class => "btn btn-primary" %>
+
+<% end %>

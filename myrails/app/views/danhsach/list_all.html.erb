@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ten</th>
+      <th>Gioitinh</th>
+      <th>Diachi</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @list.each do |ac|
+      @id=ac.id
+     %>
+      <tr>
+        <td><%= ac.Ten %></td>
+        <td><%= ac.GioiTinh %></td>
+        <td><%= ac.DiaChi %></td>
+        <td><%= link_to 'HienThi', "Chitiet?id=#{@id}" %></td>
+        <td><%= link_to 'Edit', "edit/#{@id}" %></td>
+        <td><%= link_to 'Destroy', ac, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_danhsach_path %>

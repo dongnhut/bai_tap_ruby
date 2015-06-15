@@ -13,13 +13,15 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @users.each do |user| 
+      @id=user.id
+      %>
       <tr>
         <td><%= user.Ten %></td>
         <td><%= user.DiaChi %></td>
         <td><%= user.GioiTinh %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'HienThi', "Chitiet?id=#{@id}" %></td>
+         <td><%= link_to 'Edit', "edit/#{@id}" %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
