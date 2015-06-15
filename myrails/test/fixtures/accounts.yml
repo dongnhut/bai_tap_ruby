@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Ten: MyString
+  GioiTinh: MyString
+  DiaChi: MyString
+
+two:
+  Ten: MyString
+  GioiTinh: MyString
+  DiaChi: MyString

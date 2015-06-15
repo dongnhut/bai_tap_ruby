@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :accounts
   devise_for :users
   # get 'chitiet/index'
   
@@ -6,14 +7,19 @@ Rails.application.routes.draw do
   get 'login/index'
   # get 'login/checklogin'
 
-  get 'danhsachnam/index'
-
+  get 'danhsach/index'
+  resources :danhsach
   resources :users
+  get 'edit/:id', to: 'danhsach#Edit'
+  post 'update/:id', to: 'danhsach#update'
+  post '/create', to: 'danhsach#create'
   # get 'welcome/index'
   root :to => "welcome#index"
   match '/dangnhap' => 'login#checklogin', :as => :login, via: [:get, :post]
   match '/welcome' => 'welcome#index', via: [:get, :post]
-   match '/Chitiet' => 'danhsachnam#Hienthi', via: [:get, :post]
+   match '/Chitiet' => 'danhsach#Hienthi', via: [:get, :post]
+   match '/Danhsachnam' => 'danhsach#index', via: [:get, :post]
+   match '/Danhsach' => 'danhsach#list_all', via: [:get, :post]
 
   # get 'users/hienthi'
   # The priority is based upon order of creation: first created -> highest priority.
