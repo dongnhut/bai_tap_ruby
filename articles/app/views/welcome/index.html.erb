@@ -1,0 +1,46 @@
+<br>
+<h1>Ryan blog, welcome</h1>
+
+
+ 
+ <p>DANH SACH BAI VIET</p>
+
+  <table>
+ 
+
+  <tbody>
+    <% @articles.each do |account| %>
+      <tr>
+           <th>Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   </th>
+          <td> <%= account.title %></td>
+          <tr>
+           <th>Gender   &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; </th>
+          <td> <%= account.body %></td>
+
+       <tr>
+ <% end %>
+   <tbody>
+<table>
+
+
+  <br>
+
+  <td><%= link_to 'Modifying Articles', articles_path %></td>
+ 
+
+  <table >
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+           <th>Name Picture &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   </th>
+          <td> <%= idea.name %></td>
+          <tr>
+           <th>Avatar   &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; </th>
+          <td> <%= image_tag(idea.picture_url, :width => 600) if idea.picture.present? %></td>
+
+       <tr>
+ <% end %>
+   <tbody>
+<table>
+
+  <td><%= link_to 'Modifying Picture ', ideas_path %></td>
